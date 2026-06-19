@@ -16,7 +16,7 @@ public class Leet36_ValidSudoku {
                 if (val != '.') {
                     String rowTicket = val + " found in row " + r;
                     String colTicket = val + " found in col " + c;
-                    String boxTicket = val + " found in row " + (r / 3) + "-" + (c / 3);
+                    String boxTicket = val + " found in box " + (r / 3) + "-" + (c / 3);
                     if (!seen.add(rowTicket) || !seen.add(colTicket) || !seen.add(boxTicket)) {
                         return false;
                     }
