@@ -7,18 +7,18 @@ public class Leet11_ContainerWithMostWater {
         int n = height.length;
         int left = 0, right = n - 1;
         int maxWater = 0;
-
+        int minH = -1;
         while (left < right) {
-            int currentWater = (right - left) * Math.min(height[left], height[right]);
-            maxWater = Math.max(currentWater, maxWater);
+            minH = Math.min(height[left], height[right]);
+            maxWater = Math.max(maxWater, minH * (right - left));
 
-            if (height[left] < height[right]) {
+            while (left < right && height[left] <= minH) {
                 left++;
-            } else {
+            } 
+            while (left < right && height[right] <= minH) {
                 right--;
             }
         }
-
         return maxWater;
     }
 
