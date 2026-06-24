@@ -33,7 +33,6 @@ public class Leet15_3Sum {
                     while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
-
                     // Sau khi bỏ qua số trùng, BẮT BUỘC phải dịch chuyển hai con trỏ tiếp
                     left++;
                     right--;
