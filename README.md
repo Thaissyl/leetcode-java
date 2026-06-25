@@ -21,17 +21,21 @@ Problems are grouped by difficulty. Each Java file usually contains:
 
 ## Running A Solution
 
-Compile all Java files:
+On Windows, use the included runner so Vietnamese console output is displayed as UTF-8:
 
-```bash
-javac Easy/*.java Medium/*.java Hard/*.java
+```cmd
+.\run.cmd Easy.Leet01_TwoSum
+.\run.cmd Medium.Leet238_ProductExceptSelf
 ```
 
-Run a specific problem:
+The script compiles all Java files with UTF-8 source encoding into `.build/classes`, then runs the class you choose.
+
+If Vietnamese text still appears as `?`, make sure you are running through `run.cmd` instead of calling `java` directly from an old terminal session.
+
+Manual compile:
 
 ```bash
-java Easy.Leet01_TwoSum
-java Medium.Leet238_ProductExceptSelf
+javac -encoding UTF-8 Easy/*.java Medium/*.java Hard/*.java
 ```
 
 If one difficulty folder has no `.java` files yet, compile only the folders that currently contain solutions.
@@ -58,10 +62,11 @@ Some design problems may require a specific class name, such as `LRUCache`.
 
 ## Notes
 
-Generated Java bytecode files are ignored by Git:
+Generated Java bytecode files and the local build directory are ignored by Git:
 
 ```gitignore
 *.class
+.build/
 ```
 
 This keeps the repository focused on source code only.
